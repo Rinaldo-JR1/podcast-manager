@@ -32,3 +32,6 @@ Podcasts feitos em video
   ```
 
 - Filtrar episódios por nome de podcast
+
+### Arquitetura
+<img src="./docs/arch/arch.png">
