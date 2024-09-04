@@ -1,5 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
-import { PodcastsController } from "./controllers/podcasts-controller";
+import { PodcastsController } from "./controllers/podcasts.controller";
 
 const app = express();
 let port: number;
@@ -17,6 +17,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get("/", PodcastsController.getListEpisodes);
+app.get("/filter/:podcastName", PodcastsController.getFilterEpisodes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
