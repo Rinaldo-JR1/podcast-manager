@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import { ListEpisodesService } from "../services/list-episodes.service";
 
 export class PodcastsController {
   constructor() {}
@@ -8,15 +9,6 @@ export class PodcastsController {
     res: Response,
     next: NextFunction
   ) {
-    res.status(200).json([
-      {
-        podcastName: "flow",
-        episode: "TECNOLOGIA E IA [+ FABIO AKITA]",
-        cover: "https://i.ytimg.com/vi/--slRywdonM/hqdefault.jpg",
-        link: "https://www.youtube.com/live/--slRywdonM?si=a-O0Nzt1Z_L0F28F",
-        videoId: "--slRywdonM",
-        category: ["tecnologia", "IA"],
-      },
-    ]);
+    res.status(200).json(ListEpisodesService.getEpisodes());
   }
 }
